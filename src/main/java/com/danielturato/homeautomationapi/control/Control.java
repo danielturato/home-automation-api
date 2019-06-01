@@ -5,9 +5,11 @@ import com.danielturato.homeautomationapi.device.Device;
 import com.danielturato.homeautomationapi.user.User;
 
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Control extends BaseEntity {
+    @OneToMany
     private Device device;
     private int value;
     private User lastModifiedBy;

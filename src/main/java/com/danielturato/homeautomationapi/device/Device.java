@@ -4,13 +4,15 @@ import com.danielturato.homeautomationapi.control.Control;
 import com.danielturato.homeautomationapi.core.BaseEntity;
 import com.danielturato.homeautomationapi.room.Room;
 
-import javax.persistence.Entity;
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
 public class Device extends BaseEntity {
+    @OneToMany
     private Room room;
+    @ManyToOne(cascade = CascadeType.ALL)
     private List<Control> controls;
 
     protected Device() {
