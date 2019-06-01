@@ -3,15 +3,19 @@ package com.danielturato.homeautomationapi.room;
 import com.danielturato.homeautomationapi.core.BaseEntity;
 import com.danielturato.homeautomationapi.device.Device;
 import com.danielturato.homeautomationapi.user.User;
+import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.*;
 import javax.validation.constraints.Max;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
 public class Room extends BaseEntity {
-    @Max(1000)
+    @Max(value = 1000, message = "The area can only go to {max} sq ft")
+    @NotNull
     private int area;
     @OneToMany(mappedBy = "room", cascade = CascadeType.ALL)
     private List<Device> devices;
