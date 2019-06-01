@@ -19,4 +19,7 @@ public interface RoomRepository extends PagingAndSortingRepository<Room, Long> {
 
     @RestResource(rel = "name-contains", path = "containsName")
     Page<Room> findByNameContaining(@Param("name") String name, Pageable page);
+
+    @RestResource(rel = "area-less-than", path = "areaIsBelow")
+    Page<Room> findByAreaLessThan(@Param("area") int area, Pageable page);
 }
