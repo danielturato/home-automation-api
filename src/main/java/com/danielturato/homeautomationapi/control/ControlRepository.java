@@ -1,4 +1,6 @@
 package com.danielturato.homeautomationapi.control;
 
-public interface ControlRepository {
+import org.springframework.data.repository.PagingAndSortingRepository;
+
+public interface ControlRepository extends PagingAndSortingRepository<Control, Long> {
 }

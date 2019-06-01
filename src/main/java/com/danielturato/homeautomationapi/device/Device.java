@@ -10,9 +10,9 @@ import java.util.List;
 
 @Entity
 public class Device extends BaseEntity {
-    @OneToMany
+    @ManyToOne
     private Room room;
-    @ManyToOne(cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "device", cascade = CascadeType.ALL)
     private List<Control> controls;
 
     protected Device() {
