@@ -20,7 +20,8 @@ public class Control extends BaseEntity {
         super();
     }
 
-    public Control(Device device, int value, User lastModifiedBy) {
+    public Control(String name, Device device, int value, User lastModifiedBy) {
+        this.name = name;
         this.device = device;
         this.value = value;
         this.lastModifiedBy = lastModifiedBy;

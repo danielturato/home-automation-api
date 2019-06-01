@@ -5,11 +5,13 @@ import com.danielturato.homeautomationapi.device.Device;
 import com.danielturato.homeautomationapi.user.User;
 
 import javax.persistence.*;
+import javax.validation.constraints.Max;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
 public class Room extends BaseEntity {
+    @Max(1000)
     private int area;
     @OneToMany(mappedBy = "room", cascade = CascadeType.ALL)
     private List<Device> devices;
