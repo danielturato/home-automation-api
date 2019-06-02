@@ -9,14 +9,6 @@ import org.springframework.security.access.prepost.PreAuthorize;
 
 public interface RoomRepository extends PagingAndSortingRepository<Room, Long> {
 
-    @PreAuthorize("hasRole('ROLE_ADMIN')")
-    @Override
-    <S extends Room> S save(S entity);
-
-    @PreAuthorize("hasRole('ROLE_ADMIN')")
-    @Override
-    <S extends Room> Iterable<S> saveAll(Iterable<S> entities);
-
     @RestResource(rel = "name-contains", path = "containsName")
     Page<Room> findByNameContaining(@Param("name") String name, Pageable page);
 

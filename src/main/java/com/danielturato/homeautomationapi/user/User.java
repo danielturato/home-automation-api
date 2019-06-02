@@ -6,6 +6,8 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 import javax.persistence.Entity;
+import java.util.Arrays;
+import java.util.Objects;
 
 @Entity
 public class User extends BaseEntity {
@@ -41,5 +43,21 @@ public class User extends BaseEntity {
 
     public String getPassword() {
         return password;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return Arrays.equals(roles, user.roles) &&
+                Objects.equals(password, user.password);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = Objects.hash(password);
+        result = 31 * result + Arrays.hashCode(roles);
+        return result;
     }
 }
