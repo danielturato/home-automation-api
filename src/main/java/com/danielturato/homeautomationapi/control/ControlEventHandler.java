@@ -2,6 +2,7 @@ package com.danielturato.homeautomationapi.control;
 
 import com.danielturato.homeautomationapi.user.User;
 import com.danielturato.homeautomationapi.user.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.rest.core.annotation.HandleBeforeSave;
 import org.springframework.data.rest.core.annotation.RepositoryEventHandler;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -13,6 +14,7 @@ public class ControlEventHandler {
 
     private final UserRepository users;
 
+    @Autowired
     public ControlEventHandler(UserRepository users) {
         this.users = users;
     }
