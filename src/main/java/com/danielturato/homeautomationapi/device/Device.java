@@ -3,6 +3,7 @@ package com.danielturato.homeautomationapi.device;
 import com.danielturato.homeautomationapi.control.Control;
 import com.danielturato.homeautomationapi.core.BaseEntity;
 import com.danielturato.homeautomationapi.room.Room;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import javax.persistence.*;
 import java.util.ArrayList;

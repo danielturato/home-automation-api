@@ -59,5 +59,6 @@ public class DatabaseLoader implements ApplicationRunner {
         rooms.save(room);
         devices.save(device);
         controls.save(control);
+        System.out.println("Application runner has ran!");
     }
 }

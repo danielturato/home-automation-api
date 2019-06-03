@@ -3,6 +3,7 @@ package com.danielturato.homeautomationapi.room;
 import com.danielturato.homeautomationapi.core.BaseEntity;
 import com.danielturato.homeautomationapi.device.Device;
 import com.danielturato.homeautomationapi.user.User;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
 import javax.validation.constraints.Max;
