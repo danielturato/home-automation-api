@@ -21,6 +21,7 @@ public class Control extends BaseEntity {
     }
 
     public Control(String name, Device device, int value, User lastModifiedBy) {
+        this();
         this.name = name;
         this.device = device;
         this.value = value;

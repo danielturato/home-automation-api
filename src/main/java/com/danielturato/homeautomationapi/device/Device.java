@@ -22,6 +22,7 @@ public class Device extends BaseEntity {
     }
 
     public Device(String name, Room room) {
+        this();
         this.name = name;
         this.room = room;
     }
